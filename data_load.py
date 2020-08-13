@@ -91,7 +91,7 @@ def load_data(mode="train"):
 def get_batch(num):
     """Loads training data and put them in queues"""
     num -= 1
-    with tf.device('/cpu:1'):
+    with tf.device('/job:localhost/replica:0/task:0/device:GPU:2'):
     # with tf.device(f'/GPU:{num}'):
         # Load data
         fpaths, text_lengths, texts = load_data() # list
