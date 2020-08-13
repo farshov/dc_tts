@@ -48,5 +48,5 @@ class Hyperparams:
     lr = 0.001 # Initial learning rate.
     logdir = "logdir/minaev"
     sampledir = 'samples'
-    B = 8 # batch size
+    B = 32 # batch size
     num_iterations = 2000000
