@@ -7,6 +7,7 @@ https://www.github.com/kyubyong/dc_tts
 class Hyperparams:
     '''Hyper parameters'''
     # pipeline
+    lang = "ru"
     prepro = True  # if True, run `python prepro.py` first before running `python train.py`.
     
     # signal processing
@@ -32,16 +33,20 @@ class Hyperparams:
     attention_win_size = 3
 
     # data
-    data = "/data/private/voice/LJSpeech-1.0"
+    # data = "/data/private/voice/LJSpeech-1.0"
+    data = "ru_RU/by_book/male/minaev/oblomov"
     # data = "/data/private/voice/kate"
-    test_data = 'harvard_sentences.txt'
-    vocab = "PE abcdefghijklmnopqrstuvwxyz'.?" # P: Padding, E: EOS.
-    max_N = 180 # Maximum number of characters.
-    max_T = 210 # Maximum number of mel frames.
+    # test_data = 'harvard_sentences.txt'
+    test_data = 'bot_sentences.txt'
+    if lang=="ru":
+        vocab = u'''␀␃ !',-.:;?PE êАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдежзийклмнопрстуфхцчшщъыьэюяё—'''
+        max_N, max_T = 569, 988
+    else:
+        vocab = "PE abcdefghijklmnopqrstuvwxyz'.?" # P: Padding, E: EOS.
 
     # training scheme
     lr = 0.001 # Initial learning rate.
-    logdir = "logdir/LJ01"
+    logdir = "logdir/minaev"
     sampledir = 'samples'
     B = 32 # batch size
     num_iterations = 2000000
