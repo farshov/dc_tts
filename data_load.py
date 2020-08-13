@@ -88,9 +88,11 @@ def load_data(mode="train"):
             texts[i, :len(sent)] = [char2idx[char] for char in sent]
         return texts
 
-def get_batch():
+def get_batch(num):
     """Loads training data and put them in queues"""
-    with tf.device('/cpu:0'):
+    num -= 1
+    # with tf.device('/cpu:0'):
+    with tf.device(f'/GPU:{num}'):
         # Load data
         fpaths, text_lengths, texts = load_data() # list
         maxlen, minlen = max(text_lengths), min(text_lengths)

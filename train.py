@@ -37,7 +37,7 @@ class Graph:
         ## mels: Reduced melspectrogram. (B, T/r, n_mels) float32
         ## mags: Magnitude. (B, T, n_fft//2+1) float32
         if mode=="train":
-            self.L, self.mels, self.mags, self.fnames, self.num_batch = get_batch()
+            self.L, self.mels, self.mags, self.fnames, self.num_batch = get_batch(num)
             self.prev_max_attentions = tf.ones(shape=(hp.B,), dtype=tf.int32)
             self.gts = tf.convert_to_tensor(guided_attention())
         else:  # Synthesize
