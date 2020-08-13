@@ -2,3 +2,6 @@ logdir
 samples
 metadata_minaev.csv
 ru_RU
+mags
+mels
+__pycache__/
