@@ -39,7 +39,7 @@ class Hyperparams:
     # test_data = 'harvard_sentences.txt'
     test_data = 'bot_sentences.txt'
     if lang=="ru":
-        vocab = u'''␀␃ !',-.:;?PE êАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдежзийклмнопрстуфхцчшщъыьэюяё—'''
+        vocab = u"E абвгдеёжзийклмнопрстуфхцчшщъыьэюя-"
         max_N, max_T = 569, 988
     else:
         vocab = "PE abcdefghijklmnopqrstuvwxyz'.?" # P: Padding, E: EOS.
