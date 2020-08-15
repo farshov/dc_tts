@@ -45,8 +45,8 @@ class Hyperparams:
         vocab = "PE abcdefghijklmnopqrstuvwxyz'.?" # P: Padding, E: EOS.
 
     # training scheme
-    lr = 0.001 # Initial learning rate.
+    lr = 0.0005 # Initial learning rate.
     logdir = "logdir/minaev"
     sampledir = 'samples'
-    B = 256 # batch size
+    B = 32 # batch size
     num_iterations = 2000000
