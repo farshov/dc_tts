@@ -33,20 +33,21 @@ class Hyperparams:
     attention_win_size = 3
 
     # data
-    # data = "/data/private/voice/LJSpeech-1.0"
-    data = "ru_RU/by_book/male/minaev/oblomov"
-    # data = "/data/private/voice/kate"
-    # test_data = 'harvard_sentences.txt'
+    # data = "ru_RU/by_book/male/minaev/oblomov"
+    data = russian_middle_aged_male_1
+
     test_data = 'bot_sentences.txt'
     if lang=="ru":
         vocab = u"E абвгдеёжзийклмнопрстуфхцчшщъыьэюя-"
-        max_N, max_T = 569, 988
+        # max_N, max_T = 569, 988
+        max_N = 180 # Maximum number of characters.
+        max_T = 210 # Maximum number of mel frames.
     else:
         vocab = "PE abcdefghijklmnopqrstuvwxyz'.?" # P: Padding, E: EOS.
 
     # training scheme
-    lr = 0.0005 # Initial learning rate.
-    logdir = "logdir/minaev"
+    lr = 0.001 # Initial learning rate.
+    logdir = "logdir/open_tts_logdir"
     sampledir = 'samples'
     B = 32 # batch size
     num_iterations = 2000000
