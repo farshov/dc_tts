@@ -34,8 +34,8 @@ class Hyperparams:
 
     # data
     # data = "ru_RU/by_book/male/minaev/oblomov"
-    data = russian_middle_aged_male_1
-
+    data = "russian_middle_aged_male_1"
+    
     test_data = 'bot_sentences.txt'
     if lang=="ru":
         vocab = u"E абвгдеёжзийклмнопрстуфхцчшщъыьэюя-"
