@@ -7,3 +7,5 @@ mels
 __pycache__/
 russian_middle_aged_male_1/
 name.zip
+logdir_best_model
+
